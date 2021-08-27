@@ -24,10 +24,10 @@ new_york_city.csv
 washington.csv
 
 ## Contribution
-Absolutly welocmed!
-You can write audits, fix bugs, and make this tool more powerfull!
-There is no coding style yet, so feel free.
-Once complete, please file a `pull request` with your changes. 
+Absolutely welcomed!
+You can write audits, fix bugs, and make this tool more powerful!
+There is _no coding style yet_, so feel free.
+Once complete, please file a `pull request` with your changes.
 ## Credits
 The data files were provided by @Udacity
 
