@@ -8,6 +8,10 @@ from termcolor import colored
 
 # use Colorama to make Termcolor work on Windows too
 init()
+####
+welcome_text = Figlet(font='slant')
+print(welcome_text.renderText('Explore The US Bike Share Data'))
+###
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
