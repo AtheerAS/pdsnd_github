@@ -25,19 +25,19 @@ def get_filters():
     while True:
         city = input("Would you like to see data for Chicago, New York city, or Washington?").lower()
         if city.lower() not in ('chicago', 'new york city', 'washington'):
-            print('\nNot quiet a valid input, try again!')
+            print(colored('\nNot quiet a valid input, try again!','red'))
         else:
             break
     while True:
         month = input("Which month? -January, February, March, April, May, June, or type 'all'").lower()
         if month.lower() not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
-            print('\nNot quiet a valid input, try again!')
+            print(colored('\nNot quiet a valid input, try again!','red'))
         else:
             break
     while True:
         day = input("Which day? Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday, or type 'all'").lower()
         if day.lower() not in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all'):
-            print('\nNot quiet a valid input, try again!')
+            print(colored('\nNot quiet a valid input, try again!','red'))
         else:
             break
 
@@ -63,7 +63,7 @@ def load_data(city, month, day):
     return df
 
 def time_stats(df):
-    print('\nCalculating The Most Frequent Times of Travel...\n')
+    print(colored('\nCalculating The Most Frequent Times of Travel...\n','green')
     start_time = time.time()
 
     # display the most common month
@@ -76,7 +76,7 @@ def time_stats(df):
     df['hour'] = df['Start Time'].dt.hour #hour column
     most_common_hour = df['hour'].mode()[0]
 
-    print('These are some statistics regarding travel time: \n the most popular month in which bikes were shared was {}.\n the most popular day of the week in which bikes were shared was {}. \n the most popular hour in which bikes were shared was {}.'.format(most_common_month, most_common_day,most_common_hour))
+    print(colored('These are some statistics regarding travel time: \n the most popular month in which bikes were shared was {}.\n the most popular day of the week in which bikes were shared was {}. \n the most popular hour in which bikes were shared was {}.','grey','on_white').format(most_common_month, most_common_day,most_common_hour))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -84,7 +84,7 @@ def time_stats(df):
 def station_stats(df):
     """Displays statistics on the most popular stations and trip."""
 
-    print('\nCalculating The Most Popular Stations and Trip...\n')
+    print(colored('\nCalculating The Most Popular Stations and Trip...\n', 'green'))
     start_time = time.time()
 
     # display most commonly used start station
@@ -96,14 +96,14 @@ def station_stats(df):
     # display most frequent combination of start station and end station trip
     most_frequent_station_combination = df.value_counts(['Start Station', 'End Station']).index.tolist()[0]
 
-    print('\nThe most popular start station was {}.\nThe most popular end station was {}. \nWhile the  most frequent combination of start and end stations was {}.'.format(common_start_station, common_end_station, most_frequent_station_combination))
+    print(colored('\nThe most popular start station was {}.\nThe most popular end station was {}. \nWhile the  most frequent combination of start and end stations was {}.','grey','on_white').format(common_start_station, common_end_station, most_frequent_station_combination))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def trip_duration_stats(df):
     """Displays statistics on the total and average trip duration."""
 
-    print('\nCalculating Trip Duration...\n')
+    print(colored('\nCalculating Trip Duration...\n','green'))
     start_time = time.time()
 
     # display total travel time
@@ -114,14 +114,14 @@ def trip_duration_stats(df):
     mean_of_travel_time = df['Trip Duration'].mean()
     mean = dt.timedelta(seconds = mean_of_travel_time)
 
-    print("\nTotal travel time 'in days' was {}.\nThe mean of travel durations was {}".format(total, mean))
+    print(colored("\nTotal travel time 'in days' was {}.\nThe mean of travel durations was {}",'grey','on_white').format(total, mean))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
-    print('\nCalculating User Stats...\n')
+    print(colored('\nCalculating User Stats...\n','green'))
     start_time = time.time()
 
     # Display counts of user types
@@ -138,7 +138,7 @@ def user_stats(df):
         most_common_birth_year = df['Birth Year'].mode()[0]
         most_recent_birth_year = df['Birth Year'].min()
         earliest_birth_year = df['Birth Year'].max()
-        print('\nThe most_common_birth_year is {}. \nThe youngest user was born in {}.\nWhile the oldest user was born in {}.'.format(most_common_birth_year, earliest_birth_year, most_recent_birth_year ))
+        print(colored('\nThe most_common_birth_year is {}. \nThe youngest user was born in {}.\nWhile the oldest user was born in {}.','grey','on_white').format(most_common_birth_year, earliest_birth_year, most_recent_birth_year ))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
