@@ -63,7 +63,7 @@ def load_data(city, month, day):
     return df
 
 def time_stats(df):
-    print(colored('\nCalculating The Most Frequent Times of Travel...\n','green')
+    print(colored('\nCalculating The Most Frequent Times of Travel...\n','green'))
     start_time = time.time()
 
     # display the most common month
