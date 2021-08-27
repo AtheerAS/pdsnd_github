@@ -10,6 +10,8 @@ Before running the python script you need to have the following packages in your
 * [pyfiglet](https://pypi.org/project/pyfiglet/0.7/)
 * [colorama](https://pypi.org/project/colorama/)
 * [termcolor](https://pypi.org/project/termcolor2/)
+* [colorama-colorize](https://pypi.org/project/colorama-colorize/)
+* [asciistuff](https://pypi.org/project/asciistuff/)
 
 ### Running the code locally
 You can run the python script in your command line, as the following:
